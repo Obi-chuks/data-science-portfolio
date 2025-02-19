@@ -92,6 +92,26 @@ const typeWriter = () => {
     type();
 };
 
+// Theme Toggle Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Update theme
+        document.documentElement.setAttribute('data-theme', newTheme);
+        
+        // Save preference
+        localStorage.setItem('theme', newTheme);
+    });
+});
+
 // Initialize all functions
 document.addEventListener('DOMContentLoaded', () => {
     createMobileNav();

@@ -3,41 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Scientist Portfolio</title>
+    <title>Osunkwo kingsley's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Replace the Font Awesome kit with CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="script.js" defer></script>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-blur"></div>
     <!-- Header Section -->
     <header>
         <nav>
             <div class="logo">DS Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#credentials">Credentials</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>John Doe</h1>
-            <h2>Data Scientist & ML Engineer</h2>
-            <p>Transforming data into actionable insights</p>
+            <h1>Osunkwo Kingsley</h1>
+            <h2>Data Analyst | Urban Technology </h2>
+            <p>Insightful analysis for sustainability</p>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>About Me</h2>
+        <h2>Bio</h2>
         <div class="about-content">
             <img src="profile-placeholder.jpg" alt="Profile Picture">
             <div class="about-text">
-                <p>Experienced Data Scientist with a passion for uncovering patterns in complex datasets. Specialized in machine learning, statistical analysis, and data visualization.</p>
+                <p>Kingsley is a Masters researcher at Umea University, Sweden, specializing in data magnification in urban spaces and urban centered technologies under the guidance of the Department of Geography. He earned his bachelor's from the Federal University of Technology, Owerri, supervised by Tpl. Dr Kalu O. Abaraikwu. </p>
             </div>
         </div>
     </section>
@@ -47,24 +59,24 @@
         <h2>Skills & Expertise</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <i class="fas fa-brain"></i>
-                <h3>Machine Learning</h3>
-                <p>Deep Learning, Neural Networks, NLP</p>
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>GIS</h3>
+                <p>ArcGIS, QGIS, Spatial Analysis, Mapping</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-database"></i>
                 <h3>Data Analysis</h3>
-                <p>Python, R, SQL, Tableau</p>
+                <p>R, Python, SQL, Statistical Analysis</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-chart-bar"></i>
-                <h3>Visualization</h3>
-                <p>D3.js, Matplotlib, Seaborn</p>
+                <h3>Data Visualization</h3>
+                <p>Tableau, R Shiny, Interactive Dashboards</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Programming</h3>
-                <p>Python, R, SQL, JavaScript</p>
+                <i class="fas fa-drafting-compass"></i>
+                <h3>Design & Planning</h3>
+                <p>AutoCAD, Urban Planning, Technical Drawing</p>
             </div>
         </div>
     </section>
@@ -91,6 +103,75 @@
         </div>
     </section>
 
+    <!-- News Section -->
+    <section id="news" class="news">
+        <h2>Latest News</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-date">2025 -January</div>
+                <h3>Kingsley Osunkwo is Nominated as member of Sveriges Arkitekter(Swedish Association of Architects) Education committee council </h3> 
+                <p>I am excited to be nominated as a member of the Education committee council of Sveriges Arkitekter (Swedish Association of Architects). This is a great opportunity for me to contribute to the development of the architecture profession in Sweden and to promote the exchange of knowledge and best practices between architects and other professionals.</p>
+                <a href="https://www.arkitekt.se/om-oss/arbetsgrupper/utbildningsutskottet/" class="read-more">Read More</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">2024 - November: </div>
+                <h3>Excited to have started a Master's program at Umea University, Sweden. </h3>
+                <p>I am currently pursuing a Master's in Spatial Planning and Sustainability at Umea University, Sweden. This program is designed to equip me with the skills and knowledge to leverage technology for sustainable urban development. I am looking forward to the new challenges and opportunities that this program will bring.</p>
+                <a href="https://www.umu.se/en/" class="read-more">Read More</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">2024 - October</div>
+                <h3>Completed my mandatory National Youth Service at the Development Control Unit, Federal Capital Development Authority
+</h3>
+                <p>I completed my mandatory National Youth Service at the Development Control Unit, Federal Capital Development Authority, Abuja, Nigeria. This was a great experience that helped me develop my skills and knowledge in urban planning and development.</p>
+                <a href="https://www.nysc.gov.ng/aboutscheme.html" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & CV Section -->
+    <section id="credentials" class="credentials">
+        <h2>Credentials</h2>
+        <div class="credentials-container">
+            <div class="credentials-box">
+                <i class="fas fa-certificate"></i>
+                <h3>Certifications</h3>
+                <ul class="credentials-list">
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1yZc8JIF24yWW8rcYIqHroN-DcWN3fyZK" target="_blank" class="credential-link">
+                            <i class="fas fa-award"></i>
+                            <span>GIS Professional Certification</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1yZc8JIF24yWW8rcYIqHroN-DcWN3fyZK" target="_blank" class="credential-link">
+                            <i class="fas fa-award"></i>
+                            <span>Data Analysis with R</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1yZc8JIF24yWW8rcYIqHroN-DcWN3fyZK" target="_blank" class="credential-link">
+                            <i class="fas fa-award"></i>
+                            <span>AutoCAD Professional</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="credentials-box">
+                <i class="fas fa-file-alt"></i>
+                <h3>Curriculum Vitae</h3>
+                <div class="cv-download">
+                    <p>Download my detailed CV to learn more about my experience and qualifications.</p>
+                    <a href="https://drive.google.com/file/d/1la-M_0BMmfiOTDPLlqZxByRPrcMI2LFm/view?usp=sharing" target="_blank" class="cv-button">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section with FormSpree -->
     <section id="contact" class="contact">
         <h2>Get in Touch</h2>
@@ -107,11 +188,23 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href=" https://www.linkedin.com/in/kingsley-osunkwo-222ba21a2/ " target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/kingsleyosunkwo" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href=" https://x.com/Kingsleyosunkwo" target="_blank" title="X (Twitter)">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://medium.com/@kingsleyosunkwoofficedesk" title="Medium">
+                <i class="fab fa-medium-m"></i>
+            </a>
+            <a href="https://wa.me/your-whatsapp-number" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
         </div>
-        <p>&copy; 2024 Data Scientist Portfolio. All rights reserved.</p>
+        <p>&copy; 2024 Osunkwo Kingsley. All rights reserved.</p>
     </footer>
 </body>
 </html> 
