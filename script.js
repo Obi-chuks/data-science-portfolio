@@ -92,24 +92,49 @@ const typeWriter = () => {
     type();
 };
 
-// Theme Toggle Functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
+// Get the logo image element
+const logoImage = document.querySelector('nav img');
+
+// Function to toggle theme
+function toggleTheme() {
+    const body = document.body;
+    const currentTheme = body.getAttribute('data-theme');
     
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        logoImage.src = "./public/mountanlytics.png";
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        logoImage.src = "./public/mountanlytics-darkmode.png";
+    }
+}
+
+// Function to set initial theme
+function setInitialTheme() {
+    const savedTheme = localStorage.getItem('theme') || 
+                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        // Update theme
-        document.documentElement.setAttribute('data-theme', newTheme);
-        
-        // Save preference
-        localStorage.setItem('theme', newTheme);
-    });
+    document.body.setAttribute('data-theme', savedTheme);
+    logoImage.src = savedTheme === 'dark' ? 
+        "./public/mountanlytics-darkmode.png" : 
+        "./public/mountanlytics.png";
+}
+
+// Add event listener for theme toggle button
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+// Set initial theme when page loads
+document.addEventListener('DOMContentLoaded', setInitialTheme);
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    const newTheme = e.matches ? 'dark' : 'light';
+    document.body.setAttribute('data-theme', newTheme);
+    logoImage.src = newTheme === 'dark' ? 
+        "./public/mountanlytics-darkmode.png" : 
+        "./public/mountanlytics.png";
 });
 
 // Initialize all functions
@@ -122,3 +147,111 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', validateForm);
 }); 
+
+
+// Language translations
+const translations = {
+    en: {
+        logo: "KO Portfolio",
+        nav_about: "About",
+        nav_skills: "Skills",
+        nav_projects: "Projects",
+        nav_credentials: "Credentials",
+        nav_news: "News",
+        nav_contact: "Contact",
+        hero_name: "Kingsley Osunkwo",
+        hero_title: "Data Analyst | Urban Technology",
+        hero_subtitle: "Insightful analysis for sustainability",
+        about_title: "Bio",
+        about_text: "Kingsley is a Masters researcher at Umea University, Sweden, specializing in data magnification in urban spaces and urban centered technologies under the guidance of the Department of Geography. He earned his bachelor's from the Federal University of Technology, Owerri, supervised by Tpl. Dr Kalu O. Abaraikwu."
+    },
+    es: {
+        logo: "KO Portafolio",
+        nav_about: "Sobre mí",
+        nav_skills: "Habilidades",
+        nav_projects: "Proyectos",
+        nav_credentials: "Credenciales",
+        nav_news: "Noticias",
+        nav_contact: "Contacto",
+        hero_name: "Kingsley Osunkwo",
+        hero_title: "Analista de Datos | Tecnología Urbana",
+        hero_subtitle: "Análisis perspicaz para la sostenibilidad",
+        about_title: "Biografía",
+        about_text: "Kingsley es un investigador de maestría en la Universidad de Umea, Suecia, especializado en magnificación de datos en espacios urbanos y tecnologías centradas en lo urbano bajo la guía del Departamento de Geografía. Obtuvo su licenciatura en la Universidad Federal de Tecnología, Owerri, supervisado por Tpl. Dr Kalu O. Abaraikwu."
+    },
+    fr: {
+        logo: "KO Portfolio",
+        nav_about: "À propos",
+        nav_skills: "Compétences",
+        nav_projects: "Projets",
+        nav_credentials: "Références",
+        nav_news: "Actualités",
+        nav_contact: "Contact",
+        hero_name: "Kingsley Osunkwo",
+        hero_title: "Analyste de Données | Technologie Urbaine",
+        hero_subtitle: "Analyse perspicace pour la durabilité",
+        about_title: "Biographie",
+        about_text: "Kingsley est chercheur en master à l'Université d'Umea, en Suède, spécialisé dans la magnification des données dans les espaces urbains et les technologies urbaines sous la direction du Département de Géographie. Il a obtenu sa licence à l'Université Fédérale de Technologie d'Owerri, supervisé par Tpl. Dr Kalu O. Abaraikwu."
+    },
+    de: {
+        logo: "KO Portfolio",
+        nav_about: "Über mich",
+        nav_skills: "Fähigkeiten",
+        nav_projects: "Projekte",
+        nav_credentials: "Referenzen",
+        nav_news: "Neuigkeiten",
+        nav_contact: "Kontakt",
+        hero_name: "Kingsley Osunkwo",
+        hero_title: "Datenanalyst | Urbane Technologie",
+        hero_subtitle: "Aufschlussreiche Analyse für Nachhaltigkeit",
+        about_title: "Biografie",
+        about_text: "Kingsley ist Masterforscher an der Universität Umea in Schweden und spezialisiert sich unter der Leitung der Geographischen Fakultät auf Datenvergrößerung in urbanen Räumen und urbanzentrierte Technologien. Er erwarb seinen Bachelor an der Federal University of Technology, Owerri, betreut von Tpl. Dr. Kalu O. Abaraikwu."
+    },
+    sv: {
+        logo: "KO Portfolio",
+        nav_about: "Om mig",
+        nav_skills: "Färdigheter",
+        nav_projects: "Projekt",
+        nav_credentials: "Meriter",
+        nav_news: "Nyheter",
+        nav_contact: "Kontakt",
+        hero_name: "Kingsley Osunkwo",
+        hero_title: "Dataanalytiker | Urban Teknologi",
+        hero_subtitle: "Insiktsfull analys för hållbarhet",
+        about_title: "Biografi",
+        about_text: "Kingsley är masterforskare vid Umeå universitet i Sverige och specialiserar sig på dataförstoring i urbana miljöer och urban-centrerad teknologi under ledning av Institutionen för geografi. Han tog sin kandidatexamen vid Federal University of Technology, Owerri, under handledning av Tpl. Dr Kalu O. Abaraikwu."
+    }
+};
+
+function changeLanguage() {
+    const selectedLanguage = document.getElementById('languageSelect').value;
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[selectedLanguage] && translations[selectedLanguage][key]) {
+            element.textContent = translations[selectedLanguage][key];
+        }
+    });
+}
+
+// Add Intersection Observer for scroll animations
+const observerOptions = {
+    root: null,
+    threshold: 0.1,
+    rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all project cards
+document.addEventListener('DOMContentLoaded', () => {
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => observer.observe(card));
+});
